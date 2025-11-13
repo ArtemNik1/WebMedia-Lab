@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудио, Видео, Графика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Работа с аудио, видео и изображениями</h1>
+        
+        <!-- Аудио плеер -->
+        <section class="section">
+            <h2>Аудио Плеер</h2>
+            <div class="audio-player">
+                <audio id="audioElement" controls>
+                    <source src="assets/audio/sample1.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио элемент.
+                </audio>
+                <div class="custom-controls">
+                    <button id="playPauseBtn">▶️</button>
+                    <button id="muteBtn">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                    <select id="audioSelect">
+                        <option value="assets/audio/sample1.mp3">Аудио 1</option>
+                        <option value="assets/audio/sample2.mp3">Аудио 2</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Видео плеер -->
+        <section class="section">
+            <h2>Видео Плеер</h2>
+            <div class="video-player">
+                <video id="videoElement" width="640" controls>
+                    <source src="assets/video/sample1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео элемент.
+                </video>
+                <div class="custom-controls">
+                    <button id="videoPlayPauseBtn">▶️</button>
+                    <button id="videoMuteBtn">🔊</button>
+                    <input type="range" id="videoVolumeSlider" min="0" max="1" step="0.1" value="1">
+                    <select id="videoSelect">
+                        <option value="assets/video/sample1.mp4">Видео 1</option>
+                        <option value="assets/video/sample2.mp4">Видео 2</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canvas анимация -->
+        <section class="section">
+            <h2>Canvas Анимация</h2>
+            <div class="canvas-controls">
+                <button id="startAnimation">Запуск анимации</button>
+                <button id="stopAnimation">Остановить</button>
+                <label>Цвет шаров:
+                    <input type="color" id="ballColor" value="#ff0000">
+                </label>
+                <label>Скорость:
+                    <input type="range" id="speedControl" min="1" max="10" value="5">
+                </label>
+            </div>
+            <canvas id="animationCanvas" width="800" height="400"></canvas>
+        </section>
+
+        <!-- Работа с изображениями -->
+        <section class="section">
+            <h2>Обработка изображений</h2>
+            <div class="image-controls">
+                <input type="file" id="imageUpload" accept="image/*">
+                <button id="grayscaleBtn">Черно-белый</button>
+                <button id="sepiaBtn">Сепия</button>
+                <button id="invertBtn">Инверсия</button>
+                <button id="resetImageBtn">Сброс</button>
+                <button id="saveImageBtn">Сохранить</button>
+                <label>Размер:
+                    <input type="range" id="resizeSlider" min="50" max="150" value="100">
+                </label>
+            </div>
+            <div class="image-container">
+                <canvas id="imageCanvas" width="600" height="400"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
